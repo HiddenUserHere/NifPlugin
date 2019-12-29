@@ -37,16 +37,16 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
-#define NIFTOOLS_REVISION "4b76fe6"
-#define NIFTOOLS_REVISION_INT 0x4b76fe6
+#define NIFTOOLS_REVISION "7c2e3ff"
+#define NIFTOOLS_REVISION_INT 0x7c2e3ff
 
 // NIFTOOLS_SVN_VERSION kept for compatibility
 #define NIFTOOLS_SVN_VERSION "Not modified"
 
-#define NIFTOOLS_SVN_DATE    "Sun Dec 29 00:58:14 2019 -0300"
+#define NIFTOOLS_SVN_DATE    "Sun Dec 29 02:30:13 2019 -0300"
 
 // NIFTOOLS_SVN_RANGE kept, and defined as WCREV, for compatibility
-#define NIFTOOLS_SVN_RANGE   "4b76fe6"
+#define NIFTOOLS_SVN_RANGE   "7c2e3ff"
 
 // NIFTOOLS_SVN_MIXED kept for compatibility
 #define NIFTOOLS_SVN_MIXED   "Not mixed"
