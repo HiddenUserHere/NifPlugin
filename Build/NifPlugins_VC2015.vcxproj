@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>NifPlugins</ProjectName>
+    <ProjectGuid>{466F2D3E-2663-4583-A05C-128683677617}</ProjectGuid>
+    <RootNamespace>NifPlugins</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(ProjectDir)Sheets\Max_Version_2016.props" />
+    <Import Project="$(ProjectDir)Sheets\Max_System_$(Platform).props" />
+    <Import Project="$(ProjectDir)Sheets\Release_Settings.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(ProjectDir)Sheets\Max_Version_2016.props" />
+    <Import Project="$(ProjectDir)Sheets\Max_System_$(Platform).props" />
+    <Import Project="$(ProjectDir)Sheets\Debug_Settings.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>14.0.23107.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(ADSK_3DSMAX_x64_2020)Plugins</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(ADSK_3DSMAX_x64_2020)Plugins\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Link>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <AdditionalLibraryDirectories>$(ADSK_3DSMAX_SDK_2020)\lib\x64\Release;$(MaxSDKDir)\x64\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>core.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ADSK_3DSMAX_SDK_2020)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Link>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <AdditionalLibraryDirectories>$(ADSK_3DSMAX_SDK_2020)\lib\x64\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>core.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ADSK_3DSMAX_SDK_2020)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\MtlUtils\MtlDefine.h" />
+    <ClInclude Include="..\NifCommon\AnimKey.h" />
+    <ClInclude Include="..\NifCommon\AppSettings.h" />
+    <ClInclude Include="..\NifCommon\Hyperlinks.h" />
+    <ClInclude Include="..\NifCommon\IniSection.h" />
+    <ClInclude Include="..\NifCommon\MAX_Mem.h" />
+    <ClInclude Include="..\NifCommon\MAX_MemDirect.h" />
+    <ClInclude Include="..\NifCommon\NifGui.h" />
+    <ClInclude Include="..\NifCommon\NifPlugins.h" />
+    <ClInclude Include="..\NifCommon\NifVersion.h" />
+    <ClInclude Include="..\NifCommon\niutils.h" />
+    <ClInclude Include="..\NifCommon\objectParams.h" />
+    <ClInclude Include="..\NifExport\Exporter.h" />
+    <ClInclude Include="..\NifExport\NifExport.h" />
+    <ClInclude Include="..\NifExport\NvTriStrip\NvTriStrip.h" />
+    <ClInclude Include="..\NifExport\NvTriStrip\NvTriStripObjects.h" />
+    <ClInclude Include="..\NifExport\NvTriStrip\VertexCache.h" />
+    <ClInclude Include="..\NifExport\pch.h" />
+    <ClInclude Include="..\NifExport\resource.h" />
+    <ClInclude Include="..\NifFurniture\FurnitureMarkers.h" />
+    <ClInclude Include="..\NifFurniture\NifFurniture.h" />
+    <ClInclude Include="..\NifFurniture\resource.h" />
+    <ClInclude Include="..\NifImport\BaseImporter.h" />
+    <ClInclude Include="..\NifImport\KFImporter.h" />
+    <ClInclude Include="..\NifImport\KFMImporter.h" />
+    <ClInclude Include="..\NifImport\MaxNifImport.h" />
+    <ClInclude Include="..\NifImport\NIFImporter.h" />
+    <ClInclude Include="..\NifImport\resource.h" />
+    <ClInclude Include="..\NifImport\stdafx.h" />
+    <ClInclude Include="..\NifPlugins\pch.h" />
+    <ClInclude Include="..\NifPlugins\resource.h" />
+    <ClInclude Include="..\NifProps\bhkHelperFuncs.h" />
+    <ClInclude Include="..\NifProps\bhkHelperInterface.h" />
+    <ClInclude Include="..\NifProps\bhkRigidBodyInterface.h" />
+    <CustomBuild Include="..\NifProps\dds\dds.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="..\NifProps\dds\ddsres.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="..\NifProps\dds\dxtlib.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="..\NifProps\dds\veroverrides.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <ClInclude Include="..\NifProps\iNifProps.h" />
+    <ClInclude Include="..\NifProps\MaterialFile.h" />
+    <ClInclude Include="..\NifProps\NifProps.h" />
+    <ClInclude Include="..\NifProps\NifStrings.h" />
+    <ClInclude Include="..\NifProps\resource.h" />
+    <ClInclude Include="..\NifProps\Shader\shaderutil.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\MtlUtils\mtlutil.cpp" />
+    <ClCompile Include="..\NifCommon\AnimKey.cpp" />
+    <ClCompile Include="..\NifCommon\AppSettings.cpp" />
+    <ClCompile Include="..\NifCommon\Hyperlinks.cpp" />
+    <ClCompile Include="..\NifCommon\NifGui.cpp" />
+    <ClCompile Include="..\NifCommon\NifPlugins.cpp" />
+    <ClCompile Include="..\NifCommon\NifQHull.cpp" />
+    <ClCompile Include="..\NifCommon\nimorph.cpp" />
+    <ClCompile Include="..\NifCommon\niutils.cpp" />
+    <ClCompile Include="..\NifExport\Animation.cpp" />
+    <ClCompile Include="..\NifExport\Coll.cpp" />
+    <ClCompile Include="..\NifExport\Config.cpp" />
+    <ClCompile Include="..\NifExport\Exporter.cpp" />
+    <ClCompile Include="..\NifExport\KfExport.cpp" />
+    <ClCompile Include="..\NifExport\Mesh.cpp" />
+    <ClCompile Include="..\NifExport\MtlTex.cpp" />
+    <ClCompile Include="..\NifExport\NifExport.cpp" />
+    <ClCompile Include="..\NifExport\NvTriStrip\NvTriStrip.cpp" />
+    <ClCompile Include="..\NifExport\NvTriStrip\NvTriStripObjects.cpp" />
+    <ClCompile Include="..\NifExport\NvTriStrip\VertexCache.cpp" />
+    <ClCompile Include="..\NifExport\Strips.cpp" />
+    <ClCompile Include="..\NifExport\Util.cpp" />
+    <ClCompile Include="..\NifFurniture\NifFurniture.cpp" />
+    <ClCompile Include="..\NifImport\ImportAnimation.cpp" />
+    <ClCompile Include="..\NifImport\ImportCollision.cpp" />
+    <ClCompile Include="..\NifImport\ImportLights.cpp" />
+    <ClCompile Include="..\NifImport\ImportMeshAndSkin.cpp" />
+    <ClCompile Include="..\NifImport\ImportMtlAndTex.cpp" />
+    <ClCompile Include="..\NifImport\ImportParticles.cpp" />
+    <ClCompile Include="..\NifImport\ImportSkeleton.cpp" />
+    <ClCompile Include="..\NifImport\KfDialog.cpp" />
+    <ClCompile Include="..\NifImport\KFImporter.cpp" />
+    <ClCompile Include="..\NifImport\KFMImporter.cpp" />
+    <ClCompile Include="..\NifImport\MaxNifImport.cpp" />
+    <ClCompile Include="..\NifImport\NifDialog.cpp" />
+    <ClCompile Include="..\NifImport\NIFImport.cpp" />
+    <ClCompile Include="..\NifPlugins\DllEntry.cpp" />
+    <ClCompile Include="..\NifPlugins\pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\NifProps\bhkBoxObj.cpp" />
+    <ClCompile Include="..\NifProps\bhkCapsuleObj.cpp" />
+    <ClCompile Include="..\NifProps\bhkHelperFuncs.cpp" />
+    <ClCompile Include="..\NifProps\bhkHelperInterface.cpp" />
+    <ClCompile Include="..\NifProps\bhkListObj.cpp" />
+    <ClCompile Include="..\NifProps\bhkProxyObj.cpp" />
+    <ClCompile Include="..\NifProps\bhkRigidBodyInterface.cpp" />
+    <ClCompile Include="..\NifProps\bhkRigidBodyModifer.cpp" />
+    <ClCompile Include="..\NifProps\bhkSphereObj.cpp" />
+    <ClCompile Include="..\NifProps\dds\dds.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\NifProps\MaterialFile.cpp" />
+    <ClCompile Include="..\NifProps\Modifier\BSDismemberSkin.cpp" />
+    <ClCompile Include="..\NifProps\Modifier\BSSubIndexModifier.cpp" />
+    <ClCompile Include="..\NifProps\nifProps.cpp" />
+    <ClCompile Include="..\NifProps\Shader\FO4Shader.cpp" />
+    <ClCompile Include="..\NifProps\Shader\NifShader.cpp" />
+    <ClCompile Include="..\NifProps\Shader\shaderutil.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\NifProps\Modifier\AddDel16.bmp" />
+    <Image Include="..\NifProps\Modifier\AddDelMask16.bmp" />
+    <Image Include="..\NifProps\Modifier\bmp00003.bmp" />
+    <Image Include="..\NifProps\Modifier\Lock16.bmp" />
+    <Image Include="..\NifProps\Modifier\LockMask16.bmp" />
+    <Image Include="..\NifProps\Modifier\selmask.bmp" />
+    <Image Include="Modifier\Lock16.bmp" />
+    <Image Include="Modifier\LockMask16.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\NifExport\NifExport.rc" />
+    <ResourceCompile Include="..\NifFurniture\NifFurniture.rc" />
+    <ResourceCompile Include="..\NifImport\MaxNifImport.rc" />
+    <ResourceCompile Include="..\NifPlugins\NifPlugins.rc" />
+    <ResourceCompile Include="..\NifProps\dds\dds.rc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ResourceCompile>
+    <ResourceCompile Include="..\NifProps\NifProps.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\AUTHORS.TXT" />
+    <Text Include="..\CHANGELOG.TXT" />
+    <Text Include="..\LICENSE.TXT" />
+    <Text Include="..\README.TXT" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\MaxNifTools.ini" />
+    <None Include="..\MaxNifTools.iss" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

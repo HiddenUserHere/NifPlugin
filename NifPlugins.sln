@@ -1,0 +1,54 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29609.76
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{50B67748-0DFB-45B0-BF1F-E80135EE3823}"
+	ProjectSection(SolutionItems) = preProject
+		MaxNifTools.ini = MaxNifTools.ini
+		NifPlugins_Development_Readme.txt = NifPlugins_Development_Readme.txt
+		User_Settings.vsprops = User_Settings.vsprops
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NifPlugins", "Build\NifPlugins_VC2015.vcxproj", "{466F2D3E-2663-4583-A05C-128683677617}"
+	ProjectSection(ProjectDependencies) = postProject
+		{19FD8EE6-79CC-4BAC-9744-D9573BE47C7E} = {19FD8EE6-79CC-4BAC-9744-D9573BE47C7E}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Niflib", "niflib\niflib.vcxproj", "{19FD8EE6-79CC-4BAC-9744-D9573BE47C7E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Debug|x64 = Debug|x64
+		Release|Win32 = Release|Win32
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{466F2D3E-2663-4583-A05C-128683677617}.Debug|Win32.ActiveCfg = Debug|x64
+		{466F2D3E-2663-4583-A05C-128683677617}.Debug|Win32.Build.0 = Debug|x64
+		{466F2D3E-2663-4583-A05C-128683677617}.Debug|x64.ActiveCfg = Debug|x64
+		{466F2D3E-2663-4583-A05C-128683677617}.Debug|x64.Build.0 = Debug|x64
+		{466F2D3E-2663-4583-A05C-128683677617}.Release|Win32.ActiveCfg = Release|x64
+		{466F2D3E-2663-4583-A05C-128683677617}.Release|Win32.Build.0 = Release|x64
+		{466F2D3E-2663-4583-A05C-128683677617}.Release|x64.ActiveCfg = Release|x64
+		{466F2D3E-2663-4583-A05C-128683677617}.Release|x64.Build.0 = Release|x64
+		{19FD8EE6-79CC-4BAC-9744-D9573BE47C7E}.Debug|Win32.ActiveCfg = Debug - Static|Win32
+		{19FD8EE6-79CC-4BAC-9744-D9573BE47C7E}.Debug|Win32.Build.0 = Debug - Static|Win32
+		{19FD8EE6-79CC-4BAC-9744-D9573BE47C7E}.Debug|x64.ActiveCfg = Debug - Static|x64
+		{19FD8EE6-79CC-4BAC-9744-D9573BE47C7E}.Debug|x64.Build.0 = Debug - Static|x64
+		{19FD8EE6-79CC-4BAC-9744-D9573BE47C7E}.Release|Win32.ActiveCfg = Release - Static|Win32
+		{19FD8EE6-79CC-4BAC-9744-D9573BE47C7E}.Release|Win32.Build.0 = Release - Static|Win32
+		{19FD8EE6-79CC-4BAC-9744-D9573BE47C7E}.Release|x64.ActiveCfg = Release - Static|x64
+		{19FD8EE6-79CC-4BAC-9744-D9573BE47C7E}.Release|x64.Build.0 = Release - Static|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6D8475B6-0D24-4AF2-8A3A-0B0811BC2AE5}
+	EndGlobalSection
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+EndGlobal
